@@ -1,0 +1,415 @@
+@import 'libs';
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+
+body {
+    font-family: $font-family;
+    font-weight: 700;
+    background: #1F1D2B;
+    color: $white;
+}
+
+.bg-planet {
+    background: url(../img/bg-2.png) no-repeat;
+//    background-size: cover;
+//    background-position-x: 737px;
+
+    width: 888px;
+    height: 884px;
+    position: absolute;
+    z-index: -1;
+    bottom: -28%;
+    right: -21.4%;
+}
+/* -------- Common ---------- */
+.container-side {
+    @include make-container();
+    max-width: 1260px;
+}
+
+.button {
+    @include border-gradient();
+    
+    padding: 6px 24px;
+
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+
+    &:focus {
+        border-radius: 90px;
+    }
+
+    &_bg {
+        &::before {
+            -webkit-mask-composite: unset !important;
+            z-index: -1;
+        }
+    }
+}
+
+.form-control {
+    border-radius: 90px;
+    border: none;
+    background: none !important;
+    color: $white !important;
+
+    padding: 9px 75px 9px 82px;
+
+    &::placeholder {
+        font-size: 12px
+    }
+}
+
+.text-link {
+    @include text-gradient();
+}
+.text-heading {
+    @include f-heading();
+}
+/* ------------------------------ */
+
+// ------- INPUT ---------
+
+.input-wrapper {
+    @include border-gradient();
+
+    color: $white;
+    cursor: text;
+
+    button {
+        position: absolute;
+        top: 9px;
+        left: 33px;
+        bottom: 9px;
+    }
+}
+
+// --------- NAV ----------- 
+
+.nav-link {
+    @include b-text();
+    transition: all 0.5s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }   
+}
+
+// -------- HEADER ---------
+
+.header-top {
+    padding: 27px 0;
+    backdrop-filter: blur(45px);
+    background: rgba(31, 29, 43, 0.12);
+
+    &__logo {
+        margin-left: 5px;
+    }
+
+    &__search {
+        max-width: 378px;
+        width: 100%;
+
+        margin-right: 9px;
+    }
+
+    &__wallet-btn {
+        width: 183px;
+    }
+}
+/* ---------- header bottom -------- */
+
+.header-bottom {
+    margin: 193px 0 42px 0;
+
+    &__heading {
+        max-width: 972px;
+        margin: 16px 0 64px 0;
+    }
+
+    &__button {
+        width: 200px;
+        min-height: 56px;
+    }
+
+    &__link {
+        margin-top: 154px;
+    }
+}
+
+/* ----------- Card ------------ */
+.card-list {
+    margin-top: 128px;
+
+    &:first-child {
+        margin-top: 56px;
+    }
+    &:last-child {
+        margin-bottom: 52px
+    }
+
+    &__card {
+        margin-top: 32px;
+    }
+
+    &__link {
+        @include b-text();
+    }
+
+}
+
+// Card v-1
+section.card-v1 {
+    .card  {
+        @include border-gradient(35px);
+    
+        padding: 11px 17px 21px 17px;
+        background: none;
+    
+        &__imgblock {
+            @include border-gradient(35px, 0);
+    
+            position: relative;
+            max-width: 287px;
+            height: 287px;
+        }
+
+        &__icon {
+            @include border-gradient(35px, 2);
+            position: absolute;
+            bottom: -9%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    
+        &__title {
+            line-height: 23px;
+            height: 23px;
+    
+            &::after {
+                content: url(../img/indentify-icon.svg);
+                margin-left: 8px;
+            }
+        }
+    
+        &__body {
+            margin-top: 51px;
+        }
+    
+        &__text {
+            margin: 0;
+            line-height: 20px;
+            text-align: justify;
+    
+            a {
+                @include text-gradient();
+            }
+        }
+    }
+}
+
+// Card v-2
+section.card-v2 {
+    .card  {
+        @include border-gradient(35px,1);
+        background: none;
+    
+        &__imgblock {
+            max-width: 286px;
+            height: 222px;
+
+            img {
+                border-radius: 35px 35px 0 0;
+            }
+        }
+
+        &__body {
+            padding: 0 15px;
+            padding-bottom: 15px;
+            z-index: 8;
+
+        }
+
+        &__body-wrapper {
+            background: #252836;
+            border-radius: 18px;
+        }
+    
+        &__title {
+            @include b-text();
+            line-height: 23px;
+        }
+
+        &__text {
+            font-size: 0.625rem;
+            line-height: 14px;
+            &::after {
+                content: url(../img/indentify-icon_sm.svg);
+                margin-left: 8px;
+            }
+        }
+
+        &__top {
+            position: relative;
+            padding: 23px 21px;
+
+            &::before {
+                content: url(../img/card-icon2.png);
+                width: 35.38px;
+                height: 35.38px;
+                margin-right: 12px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: $gradient;
+            }
+        }
+
+        &__bottom {
+            padding: 12px 0 10px 23px;
+        }
+    }
+}
+
+.card-bottom {
+    &__text {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    &__price {
+        @include b-text();
+    }
+}
+
+/* ---------- cards-abilites ----------- */
+.cards-abilites {
+    margin-top: 76px;
+    margin-bottom: 75px;
+
+    &__heading {
+        line-height: 23px;
+        margin-top: 12px;
+    }
+
+    &__text {
+        @include b-text();
+        text-align: justify;
+    }
+
+    &__row {
+        margin-top: 90px;
+    }
+}
+/* ------------- player -------------- */
+.player {
+    position: relative;
+    z-index: -1;
+}
+.player-present {
+    &__btn {
+        max-width: 300px;
+        width: 100%;
+        height: 56px;
+
+        margin-top: 54px;
+    }
+
+    &__video {
+        margin-top: 54px;
+    }
+}
+.video-player {
+    max-width: 994px;
+    height: 483px;
+}
+/* --------- Footer ---------- */
+.footer-about {
+    width: 100%;
+}
+.footer-nav {
+    width: 100%;
+}
+.footer-socials {
+    width: 100%;
+
+    &__item {
+        @include border-gradient(8px);
+        width: 45px;
+        height: 45px;
+        padding: 11px 10px 10px 11px;
+        margin-left: 38px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+/* ---- playback ---- */
+.playback {
+    @include border-gradient(50%);
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+
+    &::before {
+        padding: 4px;
+    }
+
+    &__play {
+        display: none;
+    }
+
+    &__pause {
+        display: none;
+        @include text-gradient();
+        padding-right: 6px; 
+    }
+}
+/* --------- Controls / Progress ----------- */
+.controls-progress {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.37);
+
+    &__line {
+        position: relative;
+        width: 0;
+        height: inherit;
+        background: $gradient;
+    }
+
+    &__point {
+        position: absolute;
+        top: 0;
+        left: -2px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: $white;
+    }
+}
+
+.controls-top {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controls-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 0 15px;
+}

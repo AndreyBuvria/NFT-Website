@@ -1,0 +1,45 @@
+@import 'vars';
+
+@mixin border-gradient($border-w: 90px, $z-index: -1) {
+    position: relative;
+
+    &::before {
+        content:"";
+        position:absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: $border-w; 
+        padding: 2px; 
+        background: $gradient; 
+        z-index: $z-index;
+        
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude; 
+    }
+}
+
+@mixin text-gradient() {
+    background: linear-gradient(90.71deg, #73E0A9 0%, #5B68DF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin f-heading() {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 52px;
+}
+
+@mixin b-text() {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 20px;
+}
