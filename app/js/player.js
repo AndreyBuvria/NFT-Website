@@ -11,85 +11,45 @@ const playback = document.querySelector('.playback'),
       timeSpan = document.querySelector('.time'),
       volumeRange   = document.querySelector('.volume');
 
-let timerId;
-
-function playbackMode() {
-    if(play.classList.contains('d-block')) {
-        video.play();
-        play.classList.remove('d-block');
+function changePlayback() {
+    if(video.paused) {
         pause.classList.add('d-block');
+        play.classList.remove('d-block');
+        video.play();
     } else {
-        video.pause();
-        pause.classList.remove('d-block');
         play.classList.add('d-block');
+        pause.classList.remove('d-block');
+        video.pause();
+    }
+}
+      
+function changeTimebar() {
+    let currentTimePart = video.currentTime / video.duration;
+    let progressOffset = Math.floor(progress.offsetWidth * currentTimePart);
+
+    if(line.offsetWidth <= progress.offsetWidth) {
+        line.style.width = progressOffset + 'px';
+        point.style.transform = `translate(${progressOffset}px)`;
+    }
+    progress.setAttribute('aria-valuenow', Math.floor((line.offsetWidth / progress.offsetWidth) * 100));
+}
+
+function rewindBar(offset) {
+    if(offset >= 0 && offset <= progress.offsetWidth) {
+        let timePart = Math.floor((offset / progress.offsetWidth) * video.duration);
+        video.currentTime = timePart;
     }
 }
 
-function rewindTime(offsetX) {
-    if(offsetX < 0) { return; }
+// Event Listeners
+playback.addEventListener('click', changePlayback);
 
-    const duration = Math.floor(video.duration);
-    let part = progress.offsetWidth / duration;
-    let time = Math.floor(offsetX / part);
-    video.currentTime = time;
-}
-
-function rewindBar(x) {
-    if(x > 0 && x <= progress.offsetWidth) {
-        point.style.transform = `translateX(${x}px)`;
-        line.style.width = x + 'px';
-    }
-}
-let videoTime = () => {
-    let time = video.currentTime;
-    Math.floor(time);
-
-    let minutes = Math.floor(time / 60);
-    let seconds = Math.floor(time - minutes * 60);
-    let minutesVal = minutes;
-    let secondsVal = seconds;
-
-    if(minutes < 10) {
-        minutesVal = '0' + minutes;
-    }
-    if(seconds < 10) {
-        secondsVal = '0' + seconds;
-    }
-
-    return minutesVal + ':' + secondsVal;
-}
-/* -------- Event Listeners ---------- */
-playback.addEventListener('click', () => playbackMode());
-video.addEventListener('play', () => {
-    timerId = setInterval(() => {
-        const part = Math.floor((progress.offsetWidth / video.duration) + line.offsetWidth);
-
-        if(line.offsetWidth <= progress.offsetWidth) {
-            //point.style.transform = `translateX(${part}px)`;
-            rewindBar(part);
-        } else {
-            clearInterval(timerId);
-        }
-    },1000);
-
-});
-video.addEventListener('pause', () => {
-    clearInterval(timerId);
-});
-video.addEventListener('timeupdate', (e) => {
-    timeSpan.innerHTML = videoTime();
-});
+video.addEventListener('timeupdate', changeTimebar);
 
 progress.addEventListener('drag', (event) => {
-    event.preventDefault();
     rewindBar(event.offsetX);
-    rewindTime(event.offsetX);
-});
-progress.addEventListener('click', (event) => {
-    rewindBar(event.offsetX);
-    rewindTime(event.offsetX);
 });
 
-volumeRange.addEventListener('input', (e) => {
-    video.volume = e.target.value;
+progress.addEventListener('click', (event) => {
+    rewindBar(event.offsetX);
 });

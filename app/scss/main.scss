@@ -361,6 +361,7 @@ section.card-v2 {
     width: 64px;
     height: 64px;
     cursor: pointer;
+    transition: all 0.5s ease;
 
     &::before {
         padding: 4px;
@@ -386,6 +387,7 @@ section.card-v2 {
         width: 0;
         height: inherit;
         background: $gradient;
+        transition: all 0.5s ease;
     }
 
     &__point {
@@ -396,6 +398,7 @@ section.card-v2 {
         width: 12px;
         border-radius: 50%;
         background: $white;
+        transition: all 0.5s ease;
     }
 }
 
