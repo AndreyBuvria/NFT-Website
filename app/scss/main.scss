@@ -2,6 +2,13 @@
 @import 'fonts';
 @import 'vars';
 @import 'mixins';
+@import 'media';
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 body {
     font-family: $font-family;
@@ -21,6 +28,7 @@ body {
     z-index: -1;
     bottom: -28%;
     right: -21.4%;
+    //calc(888px - 92%)
 }
 /* -------- Common ---------- */
 .container-side {
@@ -44,6 +52,7 @@ body {
     }
 
     &_bg {
+        white-space: nowrap;
         &::before {
             -webkit-mask-composite: unset !important;
             z-index: -1;
@@ -69,6 +78,9 @@ body {
 }
 .text-heading {
     @include f-heading();
+}
+.text-justify {
+    text-align: justify
 }
 /* ------------------------------ */
 
@@ -110,11 +122,14 @@ body {
         margin-left: 5px;
     }
 
+    &__end {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
     &__search {
         max-width: 378px;
         width: 100%;
-
-        margin-right: 9px;
     }
 
     &__wallet-btn {
@@ -153,6 +168,8 @@ body {
     }
 
     &__card {
+        align-items: center;
+        width: 100%;
         margin-top: 32px;
     }
 
@@ -311,11 +328,19 @@ section.card-v2 {
     }
 }
 /* ------------- player -------------- */
-.player {
-    position: relative;
-    z-index: -1;
+.video-player {
+    max-width: 994px;
+    max-height: 483px;
+
+    .player {
+        max-height: inherit;
+        height: 100%;
+        position: relative;
+        z-index: -1;
+    }
 }
 .player-present {
+    margin: 128px 0;
     &__btn {
         max-width: 300px;
         width: 100%;
@@ -328,30 +353,41 @@ section.card-v2 {
         margin-top: 54px;
     }
 }
-.video-player {
-    max-width: 994px;
-    height: 483px;
-}
 /* --------- Footer ---------- */
+.footer {
+    padding: 31px 0 91px 0;
+}
 .footer-about {
-    width: 100%;
+    max-width: 276px;
 }
 .footer-nav {
-    width: 100%;
+    max-width: 408px;
+
+    &__section {
+        margin-left: 69px;
+
+        &:first-child {
+           // margin-left: 0;
+        }
+    }
 }
 .footer-socials {
-    width: 100%;
+    max-width: 211px;
 
     &__item {
         @include border-gradient(8px);
         width: 45px;
         height: 45px;
-        padding: 11px 10px 10px 11px;
+        //padding: 11px 10px 10px 11px;
         margin-left: 38px;
 
         &:first-child {
             margin-left: 0;
         }
+    }
+
+    &__text {
+
     }
 }
 
@@ -378,9 +414,15 @@ section.card-v2 {
     }
 }
 /* --------- Controls / Progress ----------- */
+.controls-animation {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
 .controls-progress {
     height: 12px;
     background: rgba(255, 255, 255, 0.37);
+    cursor: pointer;
 
     &__line {
         position: relative;
@@ -411,7 +453,7 @@ section.card-v2 {
 
 .controls-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: 4%;
     left: 0;
 
     padding: 0 15px;

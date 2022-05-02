@@ -1,5 +1,6 @@
 const video = document.querySelector('video.player');
-const wrapper = document. querySelector('.video-player');
+const wrapper = document.querySelector('.video-player');
+const controls = document.querySelector('.controls');
 
 const playback = document.querySelector('.playback'),
       play     = document.querySelector('.playback__play'),
@@ -10,6 +11,8 @@ const playback = document.querySelector('.playback'),
       point    = document.querySelector('.controls-progress__point'),
       timeSpan = document.querySelector('.time'),
       volumeRange   = document.querySelector('.volume');
+
+let timerid;
 
 function changePlayback() {
     if(video.paused) {
@@ -41,10 +44,30 @@ function rewindBar(offset) {
     }
 }
 
+function rewindVolume(currentVolume) {
+    video.volume = currentVolume;
+}
+
+function controlsAnimation() {
+    if(timerid == null || undefined) {
+        timerid = setTimeout(() => {
+            controls.classList.add('controls-animation');
+        }, 4000);
+    } else {
+        clearTimeout(timerid);
+        controls.classList.remove('controls-animation');
+        timerid = setTimeout(() => {
+            controls.classList.add('controls-animation');
+        }, 4000);
+    }//
+}
+
 // Event Listeners
 playback.addEventListener('click', changePlayback);
 
 video.addEventListener('timeupdate', changeTimebar);
+
+wrapper.addEventListener('mousemove', controlsAnimation);
 
 progress.addEventListener('drag', (event) => {
     rewindBar(event.offsetX);
@@ -53,3 +76,5 @@ progress.addEventListener('drag', (event) => {
 progress.addEventListener('click', (event) => {
     rewindBar(event.offsetX);
 });
+
+volumeRange.addEventListener('input', (e) => { rewindVolume(e.target.value) }); 
