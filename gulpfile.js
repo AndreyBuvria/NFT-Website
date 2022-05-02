@@ -14,7 +14,7 @@ function html() {
 }
 
 function js() {
-	return src('app/js/app.js',) // Always at the end)
+	return src(['app/js/*.js', '!app/js/scripts.min.js']) // Always at the end)
 		.pipe(concat('scripts.min.js'))
 		// .pipe(uglify()) // Mifify js (opt.)
 		.pipe(dest('app/js'))

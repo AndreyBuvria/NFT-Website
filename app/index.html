@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--- <meta name="viewport" content="width=device-width, initial-scale=1.0">--->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NFT Website</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -11,73 +12,79 @@
     <!---<div class="bg-planet"></div>--->
     <div class="overlay">
         <header class="header">
-            <div class="header-top">
+            <div class="header-top position-relative">
                 <div class="container-side">
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-between header__wrapper">
                         <div class="logo header-top__logo">
                             <a href="#">
                                 <img src="./img/logo.png" alt="Logo">
                             </a>
                         </div>
 
-                        <div class="header-top__search">
-                            <form action="">
-                                <label class="input-wrapper position-relative w-100" for="search-input">
-                                    <input type="text" id="search-input" placeholder="Search items, collections, and accounts" class="form-control">
-
-                                    <button class="btn p-0 border-0" type="button">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g opacity="0.5">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 10.5C1.25 5.39139 5.39139 1.25 10.5 1.25C15.6086 1.25 19.75 5.39139 19.75 10.5C19.75 15.6086 15.6086 19.75 10.5 19.75C5.39139 19.75 1.25 15.6086 1.25 10.5ZM10.5 2.75C6.21981 2.75 2.75 6.21981 2.75 10.5C2.75 14.7802 6.21981 18.25 10.5 18.25C14.7802 18.25 18.25 14.7802 18.25 10.5C18.25 6.21981 14.7802 2.75 10.5 2.75Z" fill="url(#paint0_linear_138_268)"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.14123 6.6412C8.00002 5.78247 9.18854 5.25 10.5 5.25C11.8114 5.25 13 5.78246 13.8587 6.64122C14.1516 6.93411 14.1516 7.40899 13.8587 7.70188C13.5658 7.99477 13.091 7.99477 12.7981 7.70188C12.2091 7.11294 11.3976 6.75 10.5 6.75C9.60234 6.75 8.79086 7.11293 8.20185 7.7019C7.90895 7.99478 7.43407 7.99476 7.14119 7.70186C6.84831 7.40896 6.84832 6.93408 7.14123 6.6412Z" fill="url(#paint1_linear_138_268)"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0806 16.0806C16.3735 15.7877 16.8483 15.7877 17.1412 16.0806L21.3839 20.3232C21.6768 20.6161 21.6768 21.091 21.3839 21.3839C21.091 21.6768 20.6161 21.6768 20.3232 21.3839L16.0806 17.1412C15.7877 16.8483 15.7877 16.3735 16.0806 16.0806Z" fill="url(#paint2_linear_138_268)"/>
-                                            </g>
-                                            <defs>
-                                            <linearGradient id="paint0_linear_138_268" x1="1.25" y1="1.25" x2="19.9755" y2="1.48118" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#73E0A9"/>
-                                            <stop offset="1" stop-color="#5B68DF"/>
-                                            </linearGradient>
-                                            <linearGradient id="paint1_linear_138_268" x1="6.92154" y1="5.25" x2="14.1588" y2="5.48936" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#73E0A9"/>
-                                            <stop offset="1" stop-color="#5B68DF"/>
-                                            </linearGradient>
-                                            <linearGradient id="paint2_linear_138_268" x1="15.8609" y1="15.8609" x2="21.6736" y2="15.9327" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#73E0A9"/>
-                                            <stop offset="1" stop-color="#5B68DF"/>
-                                            </linearGradient>
-                                            </defs>
-                                        </svg>  
-                                    </button>                          
-                                </label>
-                            </form>
+                        <div class="menu-btn">
+                            <span></span>
                         </div>
 
-                        <nav class="d-flex align-items-center">
-                            <ul class="nav">
-                                <li class="nav-item me-spacer40">
-                                    <a class="nav-link link-light p-0" href="#">Explore</a>
-                                </li>
-
-                                <li class="nav-item me-spacer40">
-                                    <a class="nav-link link-light p-0" href="#">Activity</a>
-                                </li>
-
-                                <li class="nav-item me-spacer40">
-                                    <a class="nav-link link-light p-0" href="#">Resources</a>
-                                </li>
-                            </ul>
-
-                            <div class="d-flex align-items-center">
-                                <button class="btn button me-spacer40 link-light" type="button">Account</button>
-                                <button class="btn button button_bg header-top__wallet-btn link-light" type="button">
-                                    <span class="me-1">
-                                        <img src="./img/wallet-one.svg" alt="Connect Wallet">
-                                    </span>
-
-                                    <span>Connect Wallet</span>
-                                </button>
+                        <div class="header-top__end">
+                            <div class="header-top__search">
+                                <form action="">
+                                    <label class="input-wrapper position-relative w-100" for="search-input">
+                                        <input type="text" id="search-input" placeholder="Search items, collections, and accounts" class="form-control">
+    
+                                        <button class="btn p-0 border-0" type="button">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g opacity="0.5">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 10.5C1.25 5.39139 5.39139 1.25 10.5 1.25C15.6086 1.25 19.75 5.39139 19.75 10.5C19.75 15.6086 15.6086 19.75 10.5 19.75C5.39139 19.75 1.25 15.6086 1.25 10.5ZM10.5 2.75C6.21981 2.75 2.75 6.21981 2.75 10.5C2.75 14.7802 6.21981 18.25 10.5 18.25C14.7802 18.25 18.25 14.7802 18.25 10.5C18.25 6.21981 14.7802 2.75 10.5 2.75Z" fill="url(#paint0_linear_138_268)"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.14123 6.6412C8.00002 5.78247 9.18854 5.25 10.5 5.25C11.8114 5.25 13 5.78246 13.8587 6.64122C14.1516 6.93411 14.1516 7.40899 13.8587 7.70188C13.5658 7.99477 13.091 7.99477 12.7981 7.70188C12.2091 7.11294 11.3976 6.75 10.5 6.75C9.60234 6.75 8.79086 7.11293 8.20185 7.7019C7.90895 7.99478 7.43407 7.99476 7.14119 7.70186C6.84831 7.40896 6.84832 6.93408 7.14123 6.6412Z" fill="url(#paint1_linear_138_268)"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0806 16.0806C16.3735 15.7877 16.8483 15.7877 17.1412 16.0806L21.3839 20.3232C21.6768 20.6161 21.6768 21.091 21.3839 21.3839C21.091 21.6768 20.6161 21.6768 20.3232 21.3839L16.0806 17.1412C15.7877 16.8483 15.7877 16.3735 16.0806 16.0806Z" fill="url(#paint2_linear_138_268)"/>
+                                                </g>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_138_268" x1="1.25" y1="1.25" x2="19.9755" y2="1.48118" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#73E0A9"/>
+                                                <stop offset="1" stop-color="#5B68DF"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_138_268" x1="6.92154" y1="5.25" x2="14.1588" y2="5.48936" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#73E0A9"/>
+                                                <stop offset="1" stop-color="#5B68DF"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear_138_268" x1="15.8609" y1="15.8609" x2="21.6736" y2="15.9327" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#73E0A9"/>
+                                                <stop offset="1" stop-color="#5B68DF"/>
+                                                </linearGradient>
+                                                </defs>
+                                            </svg>  
+                                        </button>                          
+                                    </label>
+                                </form>
                             </div>
-                        </nav>
+    
+                            <nav class="d-flex align-items-center header-top__nav">
+                                <ul class="nav flex-nowrap">
+                                    <li class="nav-item me-spacer40">
+                                        <a class="nav-link link-light p-0" href="#">Explore</a>
+                                    </li>
+    
+                                    <li class="nav-item me-spacer40">
+                                        <a class="nav-link link-light p-0" href="#">Activity</a>
+                                    </li>
+    
+                                    <li class="nav-item me-spacer40">
+                                        <a class="nav-link link-light p-0" href="#">Resources</a>
+                                    </li>
+                                </ul>
+    
+                                <div class="d-flex align-items-center header-top__buttons">
+                                    <button class="btn button me-spacer40 link-light" type="button">Account</button>
+                                    <button class="btn button button_bg header-top__wallet-btn link-light d-flex align-items-center justify-content-center" type="button">
+                                        <span class="me-1">
+                                            <img src="./img/wallet-one.svg" alt="Connect Wallet">
+                                        </span>
+    
+                                        <span>Connect Wallet</span>
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,7 +97,7 @@
     
                     <div class="d-flex align-items-center">
                         <button class="btn button link-light header-bottom__button" type="button">Account</button>
-                        <button class="btn button button_bg link-light ms-4 header-bottom__button" type="button">
+                        <button class="btn button button_bg link-light ms-4 header-bottom__button d-flex align-items-center justify-content-center" type="button">
                             <span class="me-1">
                                 <img src="./img/wallet-one.svg" alt="Connect Wallet">
                             </span>
@@ -113,12 +120,12 @@
             <div class="container-side position-relative">
                 <!--- Hidden gems -->
                <section class="card-list card-v1">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
                         <h2 class="card-list__heading text-heading m-0">Hidden Gems</h2>
                         <a href="#" class="card-list__link text-link">View All</a>
                     </div>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center m-0 p-0">
-                        <article class="card card-list__card" style="width: 321px; min-height: 521px;">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center m-0 p-0 card-list__items">
+                        <article class="card card-list__card" style="max-width: 321px; min-height: 521px;">
                             <div class="card__imgblock">
                                 <img src="./img/img1.png" class="card-img-top card-img h-100" alt="Image">
                                 <div class="card__icon">
@@ -134,7 +141,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 321px; min-height: 521px;">
+                        <article class="card card-list__card" style="max-width: 321px; min-height: 521px;">
                             <div class="card__imgblock">
                                 <img src="./img/img1.png" class="card-img-top card-img h-100" alt="Image">
                                 <div class="card__icon">
@@ -150,7 +157,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 321px; min-height: 521px;">
+                        <article class="card card-list__card" style="max-width: 321px; min-height: 521px;">
                             <div class="card__imgblock">
                                 <img src="./img/img1.png" class="card-img-top card-img h-100" alt="Image">
                                 <div class="card__icon">
@@ -169,12 +176,12 @@
                 </section>
 
                 <section class="card-list card-v2">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
                         <h2 class="card-list__heading text-heading m-0">Top collections</h2>
                         <a href="#" class="card-list__link text-link">View All</a>
                     </div>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center m-0 p-0">
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center m-0 p-0 card-list__items">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -195,7 +202,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -216,7 +223,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -237,7 +244,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -258,7 +265,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -279,7 +286,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -300,7 +307,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -321,7 +328,7 @@
                             </div>
                         </article>
 
-                        <article class="card card-list__card" style="width: 286px; min-height: 367px;">
+                        <article class="card card-list__card" style="max-width: 286px; min-height: 367px;">
                             <div class="card__imgblock">
                                 <img src="./img/imgv-2.png" class="card-img-top card-img h-100" alt="Image">
                             </div>
@@ -348,8 +355,8 @@
                 <section class="cards-abilites">
                     <h2 class="text-heading">Create and sell your NFTs</h2>
 
-                    <div class="row cards-abilites__row justify-content-between flex-nowrap align-items-center">
-                        <div class="col-sm-2">
+                    <div class="row cards-abilites__row justify-content-between flex-wrap align-items-center">
+                        <div class="col-md-2">
                             <img src="./img/icon3.svg" class="rounded mx-auto d-block" alt="Image icon">
                             <h6 class="cards-abilites__heading fs-6 text-center">Set up your wallet</h6>
                             <p class="cards-abilites__text fw-light">
@@ -358,7 +365,7 @@
                             </p>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <img src="./img/icon3.svg" class="rounded mx-auto d-block" alt="Image icon">
                             <h6 class="cards-abilites__heading fs-6 text-center">Set up your wallet</h6>
                             <p class="cards-abilites__text fw-light">
@@ -367,7 +374,7 @@
                             </p>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <img src="./img/icon3.svg" class="rounded mx-auto d-block" alt="Image icon">
                             <h6 class="cards-abilites__heading fs-6 text-center">Set up your wallet</h6>
                             <p class="cards-abilites__text fw-light">
@@ -376,7 +383,7 @@
                             </p>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <img src="./img/icon3.svg" class="rounded mx-auto d-block" alt="Image icon">
                             <h6 class="cards-abilites__heading fs-6 text-center">Set up your wallet</h6>
                             <p class="cards-abilites__text fw-light">
@@ -392,39 +399,41 @@
                     <p class="text-link fw-light m-0">The NFT marketplace with everything for everyone</p>
 
                     <div class="player-present__video video-player position-relative">
-                        <div class="controls-top">
-                            <div class="controls__playback playback d-flex align-items-center justify-content-center">
-                                <div class="playback__play ms-1 d-block">
-                                    <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.66667 1.0304C2.28547 0.673135 3.04786 0.673135 3.66667 1.0304L19.6667 10.268C20.2855 10.6253 20.6667 11.2855 20.6667 12.0001C20.6667 12.7146 20.2855 13.3748 19.6667 13.7321L3.66667 22.9697C3.04786 23.327 2.28547 23.327 1.66667 22.9697C1.04786 22.6124 0.666666 21.9522 0.666666 21.2376V2.76245C0.666666 2.04792 1.04786 1.38767 1.66667 1.0304ZM4.66667 6.22655V17.7735L14.6667 12.0001L4.66667 6.22655Z" fill="url(#paint0_linear_220_163)"/>
-                                        <defs>
-                                        <linearGradient id="paint0_linear_220_163" x1="0.666666" y1="0.762451" x2="20.9111" y2="0.984858" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#73E0A9"/>
-                                        <stop offset="1" stop-color="#5B68DF"/>
-                                        </linearGradient>
-                                        </defs>
-                                    </svg>                                   
-                                </div>
-                                <div class="playback__control playback__pause">
-                                    <span>&#9616;</span><span>&#9616;</span>
+                        <div class="controls">
+                            <div class="controls-top">
+                                <div class="controls__playback playback d-flex align-items-center justify-content-center">
+                                    <div class="playback__play ms-1 d-block">
+                                        <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.66667 1.0304C2.28547 0.673135 3.04786 0.673135 3.66667 1.0304L19.6667 10.268C20.2855 10.6253 20.6667 11.2855 20.6667 12.0001C20.6667 12.7146 20.2855 13.3748 19.6667 13.7321L3.66667 22.9697C3.04786 23.327 2.28547 23.327 1.66667 22.9697C1.04786 22.6124 0.666666 21.9522 0.666666 21.2376V2.76245C0.666666 2.04792 1.04786 1.38767 1.66667 1.0304ZM4.66667 6.22655V17.7735L14.6667 12.0001L4.66667 6.22655Z" fill="url(#paint0_linear_220_163)"/>
+                                            <defs>
+                                            <linearGradient id="paint0_linear_220_163" x1="0.666666" y1="0.762451" x2="20.9111" y2="0.984858" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#73E0A9"/>
+                                            <stop offset="1" stop-color="#5B68DF"/>
+                                            </linearGradient>
+                                            </defs>
+                                        </svg>                                   
+                                    </div>
+                                    <div class="playback__control playback__pause">
+                                        <span>&#9616;</span><span>&#9616;</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="controls-bottom d-flex align-items-center w-100">
-                            <div class="controls-progress w-100" draggable="true" style="touch-action: none;">
-                                <div class="controls-progress__line">
-                                    <div class="controls-progress__point"></div>
+    
+                            <div class="controls-bottom d-flex align-items-center w-100">
+                                <div class="controls-progress w-100" draggable="true" aria-valuenow="0" style="touch-action: none;">
+                                    <div class="controls-progress__line">
+                                        <div class="controls-progress__point"></div>
+                                    </div>
+                                    <!-- <div class="controls-progress__point"></div> --->
                                 </div>
-                                <!-- <div class="controls-progress__point"></div> --->
-                            </div>
-
-                            <div class="controls-volume d-flex ms-2">
-                                <input type="range" min="0" max="1" step="0.1" value="1" class="volume">
-                            </div>
-
-                            <div class="controls-time d-flex ms-2">
-                                <span class="time">00:00</span>
+    
+                                <div class="controls-volume d-flex ms-2">
+                                    <input type="range" min="0" max="1" step="0.1" value="1" class="volume">
+                                </div>
+    
+                                <div class="controls-time d-flex ms-2">
+                                    <span class="time">00:00</span>
+                                </div>
                             </div>
                         </div>
 
@@ -439,8 +448,8 @@
 
         <footer class="footer">
             <div class="container-side">
-                <div class="d-flex align-items-center">
-                    <div class="footer-about">
+                <div class="d-flex align-items-start justify-content-between">
+                    <div class="footer-about w-100">
                         <div class="footer__logo logo">
                             <a href="#">
                                 <img src="./img/logo.png" alt="Logo">
@@ -448,69 +457,71 @@
                         </div>
 
                         <div class="footer__under-logo">
-                            <span>TheFund</span>
-                            <p>TheFund is the world's first non-fungible token (NFT) marketplace for both digital and physical assets</p>
+                            <span class="fs-base text-uppercase">TheFund</span>
+                            <p class="fw-light fs-base text-justify">TheFund is the world's first non-fungible token (NFT) marketplace for both digital and physical assets</p>
                         </div>
                     </div>
 
-                    <div class="footer-nav d-flex">
-                        <div class="">
-                            <span class="text-link">Company</span>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">About</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Careers</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Ventures</a></li>
-                                <li><a href="# "class="link-light text-decoration-none fw-light fs-base">Grants</a></li>
+                    <div class="footer-nav w-100 d-flex">
+                        <div class="footer-nav__section">
+                            <span class="text-link fs-base">Company</span>
+                            <ul class="list-unstyled mt-2">
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">About</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Careers</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Ventures</a></li>
+                                <li class="mt-2"><a href="# "class="link-light text-decoration-none fw-light fs-base">Grants</a></li>
                             </ul>
                         </div>
     
-                        <div class="">
-                            <span class="text-link">Stats</span>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Rankings</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Activity</a></li>
+                        <div class="footer-nav__section">
+                            <span class="text-link fs-base">Stats</span>
+                            <ul class="list-unstyled mt-2">
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Rankings</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Activity</a></li>
                             </ul>
                         </div>
     
-                        <div class="">
-                            <span class="text-link">Resources</span>
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Help Center</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Gas-Free Marketplace</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Blog</a></li>
-                                <li><a href="#" class="link-light text-decoration-none fw-light fs-base">Newsletter</a></li>
+                        <div class="footer-nav__section">
+                            <span class="text-link fs-base">Resources</span>
+                            <ul class="list-unstyled mt-2">
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Help Center</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Gas-Free Marketplace</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Blog</a></li>
+                                <li class="mt-2"><a href="#" class="link-light text-decoration-none fw-light fs-base">Newsletter</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="footer-socials">
-                        <span>Follow us on</span>
-                        <ul class="list-unstyled d-flex flex-wrap">
-                            <li class="footer-socials__item">
+                    <div class="footer-socials w-100">
+                        <span class="text-link fs-base">Follow us on</span>
+                        <ul class="list-unstyled d-flex flex-wrap mt-2">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/telegram.svg" alt="Facebook"></a>
                             </li>
-                            <li class="footer-socials__item">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/twitter.svg" alt="Facebook"></a>
                             </li>
-                            <li class="footer-socials__item">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/youtube.svg" alt="Facebook"></a>
                             </li>
-                            <li class="footer-socials__item">
+                        </ul>
+
+                        <ol class="list-unstyled d-flex flex-wrap">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/facebook.svg" alt="Facebook"></a>
                             </li>
-                            <li class="footer-socials__item">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/instagram.svg" alt="Facebook"></a>
                             </li>
-                            <li class="footer-socials__item">
+                            <li class="footer-socials__item d-inline-flex justify-content-center align-items-center">
                                 <a href="#"><img src="./img/tiktok.svg" alt="Facebook"></a>
                             </li>
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    <script src="js/player.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
 </html>
